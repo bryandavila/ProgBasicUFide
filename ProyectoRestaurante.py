@@ -1,4 +1,3 @@
-# Definimos un diccionario para almacenar los platillos
 platillos = {
     'Entradas': [],
     'Platos fuertes': [],
@@ -6,10 +5,8 @@ platillos = {
     'Bebidas': []
 }
 
-# Definimos una lista para almacenar las órdenes
 ordenes = []
 
-# Función para registrar un platillo
 def registrar_platillo():
     tipo = input('Ingrese el tipo de platillo (Entradas/Platos fuertes/Postres/Bebidas): ')
     descripcion = input('Ingrese la descripción del platillo: ')
@@ -17,14 +14,12 @@ def registrar_platillo():
     platillos[tipo].append({'descripcion': descripcion, 'precio': precio})
     print('Platillo registrado con éxito.')
 
-# Función para listar los platillos
 def listar_platillos():
     for tipo, lista_platillos in platillos.items():
         print(f'{tipo}:')
         for i, platillo in enumerate(lista_platillos):
             print(f'{i+1}. {platillo["descripcion"]} - ${platillo["precio"]:.2f} sin IVA')
 
-# Función para registrar una orden
 def registrar_orden():
     usuario = input('Ingrese el nombre del usuario que solicita la orden: ')
     platillos_seleccionados = []
@@ -46,7 +41,6 @@ def registrar_orden():
     ordenes.append(orden)
     print('Orden registrada con éxito.')
 
-# Función para listar las órdenes
 def listar_ordenes():
     for i, orden in enumerate(ordenes):
         print(f'Orden {i+1}: {orden["usuario"]}')
@@ -54,7 +48,6 @@ def listar_ordenes():
             print(f'- {platillo["descripcion"]} - ${platillo["precio"]:.2f} sin IVA')
         print()
 
-# Función para finalizar una orden
 def finalizar_orden():
     listar_ordenes()
     orden_seleccionada = int(input('Ingrese el número de la orden que desea finalizar: '))
@@ -62,7 +55,6 @@ def finalizar_orden():
     ordenes.remove(orden)
     print(f'La orden {orden_seleccionada} ha sido finalizada.')
 
-# Menú principal
 while True:
     print('Bienvenido al sistema de administración de platillos y órdenes.')
     print('1. Registrar platillo')
