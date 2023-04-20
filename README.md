@@ -1,2 +1,0 @@
-# ProgBasicUFide
-Programación Básica UFidélitas
